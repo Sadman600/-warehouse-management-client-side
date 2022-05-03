@@ -1,26 +1,25 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../../SharePage/Loading';
 import './Login.css';
 
 const Login = () => {
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+
     const navigate = useNavigate();
+    let location = useLocation();
+    const [user, loading] = useAuthState(auth);
+    const from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true });
+    }
     const handleSignInWithEmailAndPassword = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.psw.value;
-        // if(!user){
-        //     navigate('/signup');
-        // }
         signInWithEmailAndPassword(email, password);
-        navigate('/');
     }
     return (
         <div className='container'>
