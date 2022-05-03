@@ -1,7 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Navbar.css';
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+    const handleSignOut = () =>{
+            signOut(auth);
+            navigate('/login');
+    }
     return (
         <nav className="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
             <div className='container'>
@@ -17,15 +26,28 @@ const Navbar = () => {
                         <li className="nav-item me-3">
                             <Link className="nav-link active fs-5" aria-current="page" to='/blogs'>Blogs</Link>
                         </li>
-                        <li className="nav-item me-3">
-                            <Link className="nav-link active fs-5" aria-current="page" to='/additem'>Add Item</Link>
-                        </li>
-                        <li className="nav-item me-3">
-                            <Link className="nav-link active fs-5" aria-current="page" to='/signup'>Sign Up</Link>
-                        </li>
-                        <li className="nav-item me-3">
-                            <Link className="nav-link active fs-5" aria-current="page" to='/Login'>Login</Link>
-                        </li>
+                        {
+                            user ?
+                                <li className="nav-item me-3">
+                                    <Link className="nav-link active fs-5" aria-current="page" to='/additem'>Add Item</Link>
+                                </li>
+                                : ''
+                        }
+                        {
+                            user ? ''
+                                :
+                                <li className="nav-item me-3">
+                                    <Link className="nav-link active fs-5" aria-current="page" to='/signup'>Sign Up</Link>
+                                </li>
+                        }
+                        {
+                            user ?
+                                <button onClick={handleSignOut} type="button" className="active btn btn-link text-decoration-none">Sign Out</button>
+                                :
+                                <li className="nav-item me-3">
+                                    <Link className="nav-link active fs-5" aria-current="page" to='/Login'>Login</Link>
+                                </li>
+                        }
                     </ul>
                 </div>
             </div>
