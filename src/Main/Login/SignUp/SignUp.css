@@ -46,6 +46,7 @@ input[type=email]:focus {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    font-size: 18px;
 }
 
 .signup-btn:hover {
