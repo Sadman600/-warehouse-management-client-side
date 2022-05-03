@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Add styles to the form container */
+.signup-container {
+    margin: 64px auto;
+    max-width: 500px;
+    padding: 10px;
+    border: 3px solid gray;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.signup-container label {
+    display: block;
+    text-align: start;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 7px;
+    margin: 5px 0 7px 0;
+    border: none;
+    border-radius: 15px;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit button */
+.signup-btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.signup-btn:hover {
+    opacity: 1;
+}
