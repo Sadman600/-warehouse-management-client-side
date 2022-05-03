@@ -3,8 +3,8 @@ import './AddItem.css';
 
 const AddItem = () => {
     return (
-        <div className="add-item-container ">
-            <form action="/action_page.php" className="container">
+        <div className='container'>
+            <form action="/action_page.php" className="add-item-container">
                 <h1>Add Item</h1>
 
                 <label htmlFor="email"><b>Email</b></label>

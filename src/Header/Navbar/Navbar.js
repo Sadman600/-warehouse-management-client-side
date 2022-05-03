@@ -20,6 +20,9 @@ const Navbar = () => {
                         <li className="nav-item me-3">
                             <Link className="nav-link active fs-5" aria-current="page" to='/signup'>Sign Up</Link>
                         </li>
+                        <li className="nav-item me-3">
+                            <Link className="nav-link active fs-5" aria-current="page" to='/Login'>Login</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
