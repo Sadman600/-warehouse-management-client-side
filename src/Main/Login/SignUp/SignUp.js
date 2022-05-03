@@ -1,10 +1,34 @@
 import React from 'react';
 import './SignUp.css';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const handleCreateUserWithEmailAndPassword = e => {
+        e.preventDefault();
+        // const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.psw.value;
+        if (!email || !password) {
+            alert('Plz enter email or password');
+            return;
+        } else {
+            createUserWithEmailAndPassword(email, password);
+            navigate('/');
+        }
+
+    }
     return (
         <div className='container'>
-            <form action="/action_page.php" className="signup-container">
+            <form onSubmit={handleCreateUserWithEmailAndPassword} className="signup-container">
                 <h1>Sign Up</h1>
 
                 <label htmlFor="name"><b>Name</b></label>
