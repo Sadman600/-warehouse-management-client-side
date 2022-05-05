@@ -37,6 +37,30 @@ const Inventory = () => {
                 e.target.reset();
             });
     }
+    const handleDelivery = () => {
+        const preQuantity = parseInt(quantity);
+        const updateItem = {
+            email: email,
+            name: name,
+            image: image,
+            description: description,
+            price: price,
+            quantity: preQuantity - 1,
+            supplier: supplier
+        };
+        fetch(`http://localhost:5000/item/${itemId}`, {
+            method: 'PUT',
+            body: JSON.stringify(updateItem),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                alert('Delivery success');
+            });
+    }
     return (
         <div className='py-5'>
             <form onSubmit={handleUpdate} className='w-25 mx-auto py-3'>
@@ -47,17 +71,17 @@ const Inventory = () => {
                     </div>
                 </div>
             </form>
-            <div className='items-container'>
+            <div className=''>
                 <div className="card">
 
                     <img src={image} alt="John" style={{ width: "100%" }} />
                     <h1>{name}</h1>
                     <p>{description}</p>
                     <p className="title">$ {price}</p>
-                    <p className="title">{quantity}</p>
+                    <p className="title">Quantity: {quantity} </p>
                     <p className="title">Supplier- {supplier}</p>
 
-                    <p><button className='item-btn'>Delivery</button></p>
+                    <p><button onClick={handleDelivery} className='item-btn'>Delivery</button></p>
                 </div>
             </div>
         </div>

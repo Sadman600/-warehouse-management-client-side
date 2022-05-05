@@ -3,10 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = ({ item }) => {
-    const {_id, name, image, description, price, quantity, supplier } = item;
+    const { _id, name, image, description, price, quantity, supplier } = item;
     const navigate = useNavigate();
-    const handleUpdate = (id) => { 
-        // const parseid = parseInt(id);
+    const handleUpdate = (id) => {
         navigate(`inventory/${id}`);
     };
     return (
@@ -19,7 +18,7 @@ const Item = ({ item }) => {
             <p className="title">{quantity}</p>
             <p className="title">Supplier- {supplier}</p>
 
-            <p><button onClick={()=>handleUpdate(_id)} className='item-btn'>Update</button></p>
+            <p><button onClick={() => handleUpdate(_id)} className='item-btn'>Update</button></p>
         </div>
     );
 };
