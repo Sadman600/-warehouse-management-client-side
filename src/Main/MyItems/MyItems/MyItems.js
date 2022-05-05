@@ -30,7 +30,6 @@ const MyItems = () => {
                         <p className="title">$ {item.price}</p>
                         <p className="title">{item.quantity}</p>
                         <p className="title">Supplier- {item.supplier}</p>
-                        .
                     </div>)
                 }
             </div>
