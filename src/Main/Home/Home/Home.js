@@ -8,7 +8,7 @@ const Home = () => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
             .then(data => setItems(data));
-    }, []);
+    }, [items]);
     return (
         <div>
             <Banner></Banner>
