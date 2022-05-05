@@ -1,10 +1,38 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import './MyItems.css';
 
 const MyItems = () => {
+    const [user] = useAuthState(auth);
+    const [items, setItems] = useState([]);
+    useEffect(() => {
+        const getItems = async () => {
+            const email = user?.email;
+            const url = `http://localhost:5000/myitems?email=${email}`;
+            const { data } = await axios.get(url);
+            setItems(data);
+            console.log(data);
+        }
+        getItems();
+    }, [user]);
+
     return (
-        <div>
-            <p>My Items</p>
+        <div className='py-5'>
+            <div className='items-container py-5'>
+                {
+                    items.map(item => <div className="card">
+
+                        <img src={item.image} alt="John" style={{ width: "100%" }} />
+                        <h1>{item.name}</h1>
+                        <p>{item.description}</p>
+                        <p className="title">$ {item.price}</p>
+                        <p className="title">{item.quantity}</p>
+                        <p className="title">Supplier- {item.supplier}</p>
+                    </div>)
+                }
+            </div>
         </div>
     );
 };
