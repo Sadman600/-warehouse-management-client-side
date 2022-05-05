@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+// import useItems from '../../../Hook/useItems';
 import Banner from '../Banner/Banner';
 import Item from '../Item/Item';
 import './Home.css';
@@ -7,8 +10,12 @@ const Home = () => {
     useEffect(() => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
-            .then(data => setItems(data));
+            .then(data => setItems(data.slice(0,6)));
     }, [items]);
+    const navigate = useNavigate();
+    const handleSeeAllItem = () => {
+        navigate('/allitem')
+    }
     return (
         <div>
             <Banner></Banner>
@@ -18,6 +25,9 @@ const Home = () => {
                     {
                         items.map(item => <Item key={item._id} item={item}></Item>)
                     }
+                </div>
+                <div className='py-3'>
+                    <button onClick={handleSeeAllItem} className='btn btn-success btn-lg'>See all item</button>
                 </div>
             </div>
         </div>
