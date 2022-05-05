@@ -9,6 +9,7 @@ import Login from './Main/Login/Login/Login';
 import Blogs from './Main/Blogs/Blogs';
 import RequireAuth from './Main/Login/RequireAuth/RequireAuth';
 import AllItem from './Main/AllItem/AllItem';
+import MyItems from './Main/MyItems/MyItems/MyItems';
 
 
 
@@ -20,7 +21,8 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/additem' element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
-        <Route path='/allitem' element={<AllItem></AllItem>}></Route>
+        <Route path='/myitems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
+        <Route path='/manageitems' element={<RequireAuth><AllItem></AllItem></RequireAuth>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>

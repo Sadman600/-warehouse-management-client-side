@@ -29,6 +29,20 @@ const Navbar = () => {
                         {
                             user ?
                                 <li className="nav-item me-3">
+                                    <Link className="nav-link active fs-5" aria-current="page" to='/manageitems'>Manage Items</Link>
+                                </li>
+                                : ''
+                        }
+                        {
+                            user ?
+                                <li className="nav-item me-3">
+                                    <Link className="nav-link active fs-5" aria-current="page" to='/myitems'>My Items</Link>
+                                </li>
+                                : ''
+                        }
+                        {
+                            user ?
+                                <li className="nav-item me-3">
                                     <Link className="nav-link active fs-5" aria-current="page" to='/additem'>Add Item</Link>
                                 </li>
                                 : ''

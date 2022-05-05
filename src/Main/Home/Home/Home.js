@@ -14,7 +14,7 @@ const Home = () => {
     }, [items]);
     const navigate = useNavigate();
     const handleSeeAllItem = () => {
-        navigate('/allitem')
+        navigate('/manageitems')
     }
     return (
         <div>
@@ -27,7 +27,7 @@ const Home = () => {
                     }
                 </div>
                 <div className='py-3'>
-                    <button onClick={handleSeeAllItem} className='btn btn-success btn-lg'>See all item</button>
+                    <button onClick={handleSeeAllItem} className='btn btn-success btn-lg'>Manage Inventories</button>
                 </div>
             </div>
         </div>
