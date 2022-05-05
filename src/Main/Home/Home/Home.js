@@ -20,7 +20,6 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <div className='my-5'>
-                <p>Home</p>
                 <div className='items-container'>
                     {
                         items.map(item => <Item key={item._id} item={item}></Item>)

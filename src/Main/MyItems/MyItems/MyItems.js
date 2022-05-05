@@ -17,9 +17,10 @@ const MyItems = () => {
         }
         getItems();
     }, [user]);
-
+    
     return (
         <div className='py-5'>
+            
             <div className='items-container py-5'>
                 {
                     items.map(item => <div className="card">
