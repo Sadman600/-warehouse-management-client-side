@@ -56,7 +56,7 @@ const Navbar = () => {
                         }
                         {
                             user ?
-                                <button onClick={handleSignOut} type="button" className="active btn btn-link text-decoration-none">Sign Out</button>
+                                <button onClick={handleSignOut} type="button" className="active btn btn-link text-decoration-none">Log Out</button>
                                 :
                                 <li className="nav-item me-3">
                                     <Link className="nav-link active fs-5" aria-current="page" to='/Login'>Login</Link>
