@@ -27,8 +27,8 @@ const SignUp = () => {
 
     }
     return (
-        <div className='container'>
-            <form onSubmit={handleCreateUserWithEmailAndPassword} className="signup-container">
+        <div className='container signup-container'>
+            <form onSubmit={handleCreateUserWithEmailAndPassword} className="">
                 <h1>Sign Up</h1>
 
                 <label htmlFor="name"><b>Name</b></label>
@@ -42,6 +42,7 @@ const SignUp = () => {
 
                 <button type="submit" className="signup-btn">Sign Up</button>
             </form>
+            <p>Already have a account?<button onClick={() => navigate('/login')} type="button" className="btn btn-link">Login</button></p>
         </div>
     );
 };
