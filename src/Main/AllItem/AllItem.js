@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../Footer/Footer';
 import useItems from '../../Hook/useItems';
 import './AllItem.css';
 
@@ -39,6 +40,7 @@ const AllItem = () => {
                     </div>)
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

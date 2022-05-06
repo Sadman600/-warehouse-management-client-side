@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 import './Blogs.css';
 const Blogs = () => {
     return (
@@ -25,6 +26,7 @@ const Blogs = () => {
                     <p>JSON Web Token (JWT) is an open standard that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. </p>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

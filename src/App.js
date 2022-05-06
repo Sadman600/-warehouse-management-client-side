@@ -11,6 +11,7 @@ import RequireAuth from './Main/Login/RequireAuth/RequireAuth';
 import AllItem from './Main/AllItem/AllItem';
 import MyItems from './Main/MyItems/MyItems/MyItems';
 import Inventory from './Main/Inventory/Inventory';
+import PageNotFound from './Main/PageNotFound/PageNotFound';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/inventory/:itemId' element={<RequireAuth><Inventory></Inventory></RequireAuth>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
     </div>
   );
