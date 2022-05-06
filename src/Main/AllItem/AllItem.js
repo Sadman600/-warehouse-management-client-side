@@ -8,7 +8,7 @@ const AllItem = () => {
     const [items] = useItems();
 
     const handleDeleteItem = id => {
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://ancient-hollows-23865.herokuapp.com/item/${id}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(data => {

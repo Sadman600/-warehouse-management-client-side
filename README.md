@@ -1,6 +1,7 @@
 # IT Management Service
 
-# [Live website link](https://foodie-catering-service.firebaseapp.com/).
+# [Live client website link](https://it-management-service.web.app/).
+# [Live server website link](https://ancient-hollows-23865.herokuapp.com/).
 
 This project client Private Code Link:- https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Sadman600
 

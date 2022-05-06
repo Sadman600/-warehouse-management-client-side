@@ -16,7 +16,7 @@ const AddItem = () => {
             quantity: e.target.quantity.value,
             supplier: e.target.suppname.value
         };
-        fetch('http://localhost:5000/item', {
+        fetch('https://ancient-hollows-23865.herokuapp.com/item', {
             method: 'POST',
             body: JSON.stringify(item),
             headers: {

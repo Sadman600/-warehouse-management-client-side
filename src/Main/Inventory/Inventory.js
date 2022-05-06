@@ -6,7 +6,7 @@ const Inventory = () => {
     const [item, setItem] = useState({});
     const { email, name, image, description, price, quantity, supplier } = item;
     useEffect(() => {
-        fetch(`http://localhost:5000/item/${itemId}`)
+        fetch(`https://ancient-hollows-23865.herokuapp.com/item/${itemId}`)
             .then(res => res.json())
             .then(data => setItem(data));
     }, [item]);
@@ -23,7 +23,7 @@ const Inventory = () => {
             quantity: preQuantity + newQuantity,
             supplier: supplier
         };
-        fetch(`http://localhost:5000/item/${itemId}`, {
+        fetch(`https://ancient-hollows-23865.herokuapp.com/item/${itemId}`, {
             method: 'PUT',
             body: JSON.stringify(updateItem),
             headers: {
@@ -48,7 +48,7 @@ const Inventory = () => {
             quantity: preQuantity - 1,
             supplier: supplier
         };
-        fetch(`http://localhost:5000/item/${itemId}`, {
+        fetch(`https://ancient-hollows-23865.herokuapp.com/item/${itemId}`, {
             method: 'PUT',
             body: JSON.stringify(updateItem),
             headers: {

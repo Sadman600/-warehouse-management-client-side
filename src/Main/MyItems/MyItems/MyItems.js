@@ -10,7 +10,7 @@ const MyItems = () => {
     useEffect(() => {
         const getItems = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/myitems?email=${email}`;
+            const url = `https://ancient-hollows-23865.herokuapp.com/myitems?email=${email}`;
             const { data } = await axios.get(url);
             setItems(data);
             console.log(data);
@@ -19,7 +19,7 @@ const MyItems = () => {
     }, [items]);
 
     const handleDeleteItem = id => {
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://ancient-hollows-23865.herokuapp.com/item/${id}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(data => {
