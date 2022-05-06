@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../../Footer/Footer';
 // import useItems from '../../../Hook/useItems';
 import Banner from '../Banner/Banner';
 import Item from '../Item/Item';
@@ -31,6 +32,7 @@ const Home = () => {
                 </div>
             </div>
             <Service></Service>
+            <Footer></Footer>
         </div>
     );
 };
