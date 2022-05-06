@@ -21,11 +21,11 @@ const Service = () => {
             <div className='container service-container my-5 py-5'>
                 <div className='p-5 text-start border border-5 rounded'>
                     <h1 className='text-danger'>What is ITMS?</h1>
-                    <h5 className=''>IT service management— often referred to as ITSM— is
+                    <h5 className=''>IT management service — often referred to as ITMS— is
                         simply how IT teams manage the end-to-end delivery of
                         IT services to customers. This includes all the processes
                         and activities to design, create, deliver, and support
-                        IT services. ITSM teams oversee all kinds of workplace
+                        IT services. ITMS teams oversee all kinds of workplace
                         technology, ranging from laptops, to servers, to business-critical
                         software applications.</h5>
                 </div>
