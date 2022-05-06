@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // import useItems from '../../../Hook/useItems';
 import Banner from '../Banner/Banner';
 import Item from '../Item/Item';
+import Service from '../Service/Service';
 import './Home.css';
 const Home = () => {
     const [items, setItems] = useState([]);
@@ -29,6 +30,7 @@ const Home = () => {
                     <button onClick={handleSeeAllItem} className='btn btn-success btn-lg'>Manage Inventories</button>
                 </div>
             </div>
+            <Service></Service>
         </div>
     );
 };
