@@ -9,7 +9,7 @@ const Service = () => {
                 <div className=''>
                     <img className='rounded' src={img1} alt=''></img>
                 </div>
-                <div className='p-5 text-start '>
+                <div className='text-start '>
                     <h1 className='text-primary '>Teams across the world rely on IT Service Management</h1>
                     <h4 className=''>“IT Service Management supports our processes so we all work
                         in the same tool, in the same way...Now we have a single
